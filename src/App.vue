@@ -21,17 +21,20 @@ header {
 }
 button {
   border: none;
-  padding: 1em 2em;
   border-radius: 10px;
   margin: 20px auto;
-  width: 100px;
   background: #ffffff;
   font-weight: 500;
   cursor: pointer;
   &.btn-primary {
+    padding: 15px;
+    font-size: 20px;
     display: block;
+    width: 200px;
   }
   &.btn-secondary {
+    font-size: 1em;
+    width: 100px;
     padding: 10px;
     display: inline-block;
   }

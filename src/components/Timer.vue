@@ -3,7 +3,7 @@
     <div class="workout-buttons">
       <button class="btn-primary" @click="start()">start workout</button>
       <button class="btn-primary" @click="pause()">pause workout</button>
-      <button class="btn-primary" @click="stop()">complete Workout</button>
+      <button class="btn-primary" @click="stop()">complete workout</button>
     </div>
     <div class="timer-buttons">
       <div class="timer">{{formatTime(this.time.minutes)}}:{{formatTime(this.time.seconds)}}</div>
