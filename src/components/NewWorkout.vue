@@ -68,10 +68,14 @@
   .form-wrapper {
     .input-group {
       margin: 8px auto;
-    }
-    label, input {
-      width: 100px;
-      display: inline-block;
+      label, input {
+        width: 100px;
+        display: inline-block;
+      }
+      input {
+        border: none;
+        padding: 8px;
+      }
     }
   }
   table {

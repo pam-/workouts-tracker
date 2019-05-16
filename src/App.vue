@@ -16,7 +16,7 @@ body {
   background-color: #fef487;
 }
 header {
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 30px;
 }
 button {
@@ -30,11 +30,11 @@ button {
     padding: 15px;
     font-size: 20px;
     display: block;
-    width: 200px;
+    width: 300px;
   }
   &.btn-secondary {
     font-size: 1em;
-    width: 100px;
+    width: 120px;
     padding: 10px;
     display: inline-block;
   }

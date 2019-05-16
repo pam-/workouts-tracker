@@ -17,7 +17,7 @@
 .timer {
   padding: 10px;
   background: #2c3e50;
-  width: 200px;
+  width: 280px;
   margin: 0 auto;
   border-radius: 10px;
   color: #fff;
