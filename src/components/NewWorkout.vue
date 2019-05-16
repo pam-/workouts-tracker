@@ -112,7 +112,7 @@ export default {
       duration: Timer.time,
       overallFeels: '',
       weekDay: moment().format('dddd'),
-      form: this.formDefaults(),
+      form: this.moveDefaults(),
       workout: '',
       moves: [],
       finalTime: {},
@@ -122,7 +122,7 @@ export default {
   firestore() {
     return {
       workout: db.collection('workouts').doc(this.uid),
-      moves: db.collection('workouts').doc(this.uid).collection('moves')
+      moves: db.collection('workouts').doc(this.uid).collection('moves').orderBy('createdAt', 'asc')
     }
   },
   mounted() {
@@ -154,10 +154,14 @@ export default {
       db.collection('workouts').doc(this.uid).set(this.workoutDefaults())
     },
     addMove() {
-      db.collection('workouts').doc(this.uid).collection('moves').add({...this.form})
+      if (this.form.name.length > 1) {
+        this.form.createdAt = this.uidFormat()
+        db.collection('workouts').doc(this.uid).collection('moves').add({...this.form})
+        this.form = this.moveDefaults()
+      }
     },
     cancelMove() {
-      this.form = this.formDefaults()
+      this.form = this.moveDefaults()
     },
     deleteMove(id) {
       db.collection('workouts').doc(this.uid).collection('moves').doc(id).delete()
@@ -169,7 +173,7 @@ export default {
       this.time = time
       this.completeWorkout()
     },
-    formDefaults() {
+    moveDefaults() {
       return {
         name: '',
         reps: '',
